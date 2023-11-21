@@ -1,0 +1,64 @@
+﻿<!-- Define the main window with various namespaces -->
+<Window x:Class="SprayPaintApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Spray Paint App" Height="450" Width="1000" ResizeMode="CanResize" WindowStyle="None"  WindowStartupLocation="CenterScreen" WindowState="Maximized" >
+    <Grid>
+        <!-- Grid with two rows, one for the title bar and another for the main content -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Title bar grid with background and title -->
+        <Grid Grid.Row="0" MouseDown="Grid_MouseDown" Background="#112B4E">
+            <TextBlock  Text="Tofunmi Spray Paint Application" 
+                        VerticalAlignment="Center" Margin="10,0,0,0" FontSize="18" FontWeight="Bold" HorizontalAlignment="Left" Foreground="#fff"/>
+
+            <!-- StackPanel for window control buttons (minimize, maximize, close) -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto" Height="25" Margin="10,0,10,0" >
+                <Image Stretch="Fill" x:Name="imgmin" Margin="02,0,0,0" Cursor="Hand" MouseDown="imgmin_MouseDown" Source="Images/min.png" />
+                <Image Stretch="Fill" x:Name="imgmax"  Margin="02,0,0,0" Cursor="Hand" MouseDown="imgmax_MouseDown" Source="Images/max.png" />
+                <Image Stretch="Fill" x:Name="imgclose"  Margin="2,0,0,0" Cursor="Hand" MouseDown="imgclose_MouseDown" Source="Images/close.png" />
+            </StackPanel>
+
+        </Grid>
+
+        <!-- Main content grid with two columns, one for controls and another for the canvas -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Sidebar Controls grid with buttons, sliders, and checkboxes -->
+            <Grid Grid.Column="1" Background="white">
+                <!-- Content for sidebar controls-->
+                <StackPanel Orientation="Vertical" Margin="10" HorizontalAlignment="Center"  VerticalAlignment="Center">
+                    <Button Content="Load Image" Click="LoadImage_Click" Margin="0,0,0,10" Background="#E26219" BorderThickness="0"/>
+                    <Button Content="Save Changes" Click="SaveChanges_Click" Margin="0,0,0,10"  Background="#E26219" BorderThickness="0"/>
+                    <Label Content="Color:" Margin="0,0,0,5"/>
+                    <xctk:ColorPicker x:Name="ColorPicker" Opacity="40" SelectedColor="#E26219" Margin="0,0,0,10"/>
+                    <Label Content="Density:" />
+                    <Slider x:Name="DensitySlider"    Value="5" Width="138" Margin="0,0,0,10"  Foreground="#E26219" BorderThickness="0"/>
+                    <Label Content="Spray Size:"/>
+                    <Slider x:Name="SizeSlider" Minimum="0" Maximum="100"  Value="10" Width="138" Margin="0,0,0,10"  Foreground="#E26219" BorderThickness="0"/>
+                    <Label Content="Opacity :"/>
+                    <Slider x:Name="OpacitySlider" Minimum="0" Maximum="10"  Value="1"  Width="138" Margin="0,0,0,10"  Foreground="#E26219" BorderThickness="0"/>
+                    <CheckBox x:Name="EraserCheckBox" HorizontalAlignment="Center"  Content="Eraser" Checked="EraserCheckBox_Checked" Unchecked="EraserCheckBox_Unchecked" Margin="0,10,0,0"/>
+                </StackPanel>
+            </Grid>
+
+            <!-- Canvas grid for drawing with mouse -->
+            <Grid Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <Canvas x:Name="PaintCanvas" Background="#607189" MouseMove="PaintCanvas_MouseMove" MouseDown="PaintCanvas_MouseDown" MouseUp="PaintCanvas_MouseUp"/>
+            </Grid>
+
+        </Grid>
+    </Grid>
+</Window>
