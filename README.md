@@ -1,4 +1,4 @@
-# CaseGuard Spray Paint Assignment
+# Spray Paint Assignment
 
 This is a WPF application that performs the following requirements/tasks:
 
