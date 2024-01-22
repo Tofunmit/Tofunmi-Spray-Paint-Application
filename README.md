@@ -15,6 +15,9 @@ Requirements:
 Generating the executable file:
 The executable version of the code is created using Advanced Installer Version 21.2.2 - https://www.advancedinstaller.com/download.html . The executable file is named: “CaseGuard Spray Paint Project” which can be found in the parent folder and can also be found in the Setup Files folder
 
+![image](https://github.com/Tofunmit/Tofunmi-Spray-Paint-Application/assets/116541373/c397b225-f03b-4db5-b05e-3056a2c9b6e8)
+
+
 
 Main Technologies:
 
