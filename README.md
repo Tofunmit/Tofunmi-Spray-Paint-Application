@@ -17,6 +17,7 @@ The executable version of the code is created using Advanced Installer Version 2
 
 ![image](https://github.com/Tofunmit/Tofunmi-Spray-Paint-Application/assets/116541373/c397b225-f03b-4db5-b05e-3056a2c9b6e8)
 
+![image](https://github.com/Tofunmit/Tofunmi-Spray-Paint-Application/assets/116541373/b5e54816-5dc8-4bd6-9b89-ea9142ca1dfe)
 
 
 Main Technologies:
